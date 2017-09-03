@@ -10,6 +10,7 @@ import './App.css';
 import ChannelsListWithData from './components/ChannelsListWithData';
 import NotFound from './components/NotFound';
 import ChannelDetails from './components/ChannelDetails';
+import Home from './components/Home';
 
 import {
   ApolloClient,
@@ -65,7 +66,8 @@ class App extends Component {
           <div className="App">
             <Link to="/" className="navbar">React + GraphQL Tutorial</Link>
             <Switch>
-              <Route exact path="/" component={ChannelsListWithData}/>
+              <Route exact path="/" component={Home}/>
+              <Route path="/channelsList" component={ChannelsListWithData}/>
               <Route path="/channel/:channelId" component={ChannelDetails}/>
               <Route component={ NotFound }/>
             </Switch>
